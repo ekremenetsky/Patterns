@@ -6,7 +6,7 @@ using namespace std;
 class Product {
 public:
     virtual string getName() = 0;
-    virtual ~Product();
+    virtual ~Product() {}
 };
 
 class ConcreteProductA: public Product {
@@ -35,7 +35,8 @@ public:
 };
 
 
-int mani() {
+
+int main() {
     static const size_t count = 2;
 
     ConcreteCreatorA creatorA;
@@ -48,6 +49,6 @@ int mani() {
         cout << product->getName() << endl;
         delete product;
     }
-    
+  
     return 0;   
 }
